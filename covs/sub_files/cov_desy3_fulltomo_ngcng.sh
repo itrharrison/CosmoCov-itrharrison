@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=desy3_cng_cov
+#SBATCH --job-name=desy3_ngcng_cov
 #SBATCH -p c_compute_physics1
 #SBATCH -A scw1361
 #SBATCH --nodes=1
@@ -25,7 +25,7 @@ N=1540
 for ((i = 0; i < SLURM_NTASKS; i++)); do
 	i_cov=$((SLURM_ARRAY_TASK_ID*SLURM_NTASKS+i+1));
 	if [[ ${i_cov} -gt N ]]; then break; fi;
-	srun --ntasks 1 --exclusive -c 1 ./cov ${i_cov} ini_files/cov_desy3_fulltomo_cng.ini >&/home/c.c1025819/CosmoCov-itrharrison/covs/log_files/cov_desy3_fulltomo_cng_${i_cov}.log
+	srun --ntasks 1 --exclusive -c 1 ./cov ${i_cov} ini_files/cov_desy3_fulltomo_ngcng.ini >&/home/c.c1025819/CosmoCov-itrharrison/covs/log_files/cov_desy3_fulltomo_ngcng_${i_cov}.log
 done;
 
 # N / ntasks = array
