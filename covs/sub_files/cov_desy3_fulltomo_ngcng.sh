@@ -4,7 +4,7 @@
 #SBATCH -A scw1361
 #SBATCH --nodes=1
 #SBATCH --ntasks=28
-#SBATCH --array=0-55
+#SBATCH --array=0-55%4
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=1gb
 #SBATCH --time=72:00:00
