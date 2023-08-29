@@ -1,7 +1,7 @@
 cfastcov_dir := ../cosmolike_core/2dfftlog/
 cfastcov := $(cfastcov_dir)twobessel.c $(cfastcov_dir)utils.c $(cfastcov_dir)utils_complex.c
 opt_home := -std=c99 -Wno-missing-braces -Wno-missing-field-initializers \
--I/usr/local/include -L/usr/local/lib -lgsl -lfftw3 -lgslcblas -lm -g -O3 \
+-I${C_INCLUDE_PATH} -L${LD_LIBRARY_PATH} -lgsl -lfftw3 -lgslcblas -lm -g -O3 \
 -ffast-math -funroll-loops -std=gnu99
 
 cfftlog_dir := ../cosmolike_core/cfftlog/
